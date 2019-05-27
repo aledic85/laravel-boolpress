@@ -10,11 +10,10 @@ class Post extends Model
 
       'category',
       'title',
-      'content',
-      'category_id'
+      'content'
     ];
 
-    public function categories()
+    function categories()
     {
         return $this->belongsToMany(Category::class);
     }

@@ -8,11 +8,10 @@ class Category extends Model
 {
   protected $fillable = [
 
-    'category_name',
-    'post_id'
+    'category_name'
   ];
 
-  public function posts()
+  function posts()
   {
       return $this->belongsToMany(Post::class);
   }
