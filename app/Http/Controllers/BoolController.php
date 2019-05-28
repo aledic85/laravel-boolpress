@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\BoolRequest;
 use App\Post;
 use App\Category;
 
@@ -26,7 +27,8 @@ class BoolController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('page.new-post', compact('categories'));
     }
 
     /**
@@ -35,9 +37,12 @@ class BoolController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BoolRequest $request)
     {
-        //
+        $validatedData = $request->validated();
+        $post = Post::create($validatedData);
+        $post->categories()->attach($validatedData['category_name']);
+        return redirect('boolpress');
     }
 
     /**
@@ -48,7 +53,8 @@ class BoolController extends Controller
      */
     public function show($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        return view('page.single-post', compact('post'));
     }
 
     /**
