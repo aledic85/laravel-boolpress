@@ -41,7 +41,7 @@ class BoolController extends Controller
     {
         $validatedData = $request->validated();
         $post = Post::create($validatedData);
-        $post->categories()->attach($validatedData['category_name']);
+        $post->categories()->attach($validatedData['categories']);
         return redirect('boolpress');
     }
 
