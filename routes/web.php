@@ -12,3 +12,5 @@
 */
 
 Route::resource('boolpress', 'BoolController');
+
+Route::resource('categories', 'CatController');

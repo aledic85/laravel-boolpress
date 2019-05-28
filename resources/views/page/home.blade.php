@@ -1,6 +1,8 @@
 @extends('layout.layout')
 
 @section('content')
+
+  <h1>Last five posts:</h1>
     @for($i = count($posts)-1; $i > count($posts)-6; $i--)
       <div class="card m-3" style="width: 18rem;">
         <div class="card-body">
