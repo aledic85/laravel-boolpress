@@ -3,17 +3,19 @@
 @section('content')
 
   <h1>Last five posts:</h1>
-    @for($i = count($posts)-1; $i > count($posts)-6; $i--)
+  <div class="row align-items-center justify-content-center mt-5">
+    @foreach($posts as $post)
       <div class="card m-3" style="width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title">Title: {{$posts[$i]['title']}}</h5>
-          <h5 class="card-title">Category: @foreach ($posts[$i]->categories as $category)
-                                                {{$category->category_name}}
-                                              @endforeach</h5>
-          <p class="card-text">{{$posts[$i]['content']}}</p>
-          <a href="{{route('boolpress.show', $posts[$i]['id'])}}" class="btn btn-primary">Go somewhere</a>
-          <a href="{{route('boolpress.edit', $posts[$i]['id'])}}"><i class="fas fa-edit"></i></a>
+          <h5 class="card-title">Title: {{$post->title}}</h5>
+          <h5 class="card-title">Category: @foreach ($post->categories as $category)
+            {{$category->category_name}}
+          @endforeach</h5>
+          <p class="card-text">{{$post->content}}</p>
+          <a href="{{route('boolpress.show', $post->id)}}" class="btn btn-primary">Go somewhere</a>
+          <a href="{{route('boolpress.edit', $post->id)}}"><i class="fas fa-edit"></i></a>
         </div>
       </div>
-    @endfor
+    @endforeach
+  </div>
 @stop

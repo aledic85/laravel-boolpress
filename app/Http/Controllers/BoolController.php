@@ -16,7 +16,7 @@ class BoolController extends Controller
      */
     public function index()
     {
-        $posts = Post::all();
+        $posts = Post::orderBy('updated_at','desc')->paginate(5);
         return view('page.home', compact('posts'));
     }
 
