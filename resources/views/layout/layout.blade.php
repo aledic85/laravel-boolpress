@@ -37,7 +37,7 @@
           @yield('content')
         </div>
       </div>
-     <footer class="d-flex flex-column align-items-center mt-5">
+     <footer class="d-flex flex-column align-items-center mt-5 text-primary bg-dark">
        <h1>Hello from footer</h1>
      </footer>
    </body>

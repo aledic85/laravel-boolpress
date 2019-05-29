@@ -19,7 +19,7 @@
         > {{$category->category_name}}<br>
       @endforeach
     <label>Content:</label><br>
-    <textarea class="form-control" name="content" value="{{$post->content}}">{{$post->content}}</textarea><br><br>
+    <textarea rows="4" cols="50" class="form-control" name="content" value="{{$post->content}}">{{$post->content}}</textarea><br><br>
     <button type="submit" name="button">Update!</button>
   </form>
 @stop
