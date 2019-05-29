@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\BoolRequest;
-use App\Http\Requests\EditRequest;
 use App\Post;
 use App\Category;
 use App\Author;
 
-class BoolController extends Controller
+
+class AutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,8 +17,8 @@ class BoolController extends Controller
      */
     public function index()
     {
-        $posts = Post::orderBy('updated_at','desc')->paginate(5);
-        return view('page.home', compact('posts'));
+      $authors = Author::all();
+      return view('page.authors', compact('authors'));
     }
 
     /**
@@ -29,8 +28,7 @@ class BoolController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-        return view('page.new-post', compact('categories'));
+        //
     }
 
     /**
@@ -39,14 +37,9 @@ class BoolController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BoolRequest $request)
+    public function store(Request $request)
     {
-        $validatedData = $request->validated();
-        $post = Post::make($validatedData);
-        $author = Author::create($validatedData);
-        $post->author()->associate($author)->save();
-        $post->categories()->attach($request['categories']);
-        return redirect('boolpress');
+        //
     }
 
     /**
@@ -57,8 +50,8 @@ class BoolController extends Controller
      */
     public function show($id)
     {
-        $post = Post::findOrFail($id);
-        return view('page.single-post', compact('post'));
+      $author= Author::findOrFail($id);
+      return view('page.post-for-author', compact('author'));
     }
 
     /**
@@ -69,9 +62,7 @@ class BoolController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::findOrFail($id);
-        $categories = Category::all();
-        return view('page.post-edit', compact('post', 'categories'));
+        //
     }
 
     /**
@@ -81,12 +72,9 @@ class BoolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(EditRequest $request, $id)
+    public function update(Request $request, $id)
     {
-        $validatedData = $request->validated();
-        Post::whereId($id)->update($validatedData);
-        Post::findOrFail($id)->categories()->sync($request['categories']);
-        return redirect('boolpress');
+        //
     }
 
     /**

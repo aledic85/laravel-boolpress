@@ -12,6 +12,7 @@
       <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
         <a class="navbar-brand text-primary" href="{{route('boolpress.index')}}"><h1>Boolpress</h1></a>
         <a class="navbar-brand" href="{{route('categories.index')}}"><span>View all posts by category</span></a>
+        <a class="navbar-brand" href="{{route('authors.index')}}"><span>View all posts by author</span></a>
         <a class="navbar-brand" href="{{route('boolpress.create')}}"><span>Create new post</span></a>
       </nav>
       <div class="container mt-5 p-5 h-100">
