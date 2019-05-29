@@ -9,15 +9,13 @@
      <title>@yield('title', 'Boolpress')</title>
    </head>
    <body>
-     <div class="container-fluid">
-       <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
-         <a class="navbar-brand text-primary" href="{{route('boolpress.index')}}"><h1>Boolpress</h1></a>
-         <a class="navbar-brand" href="{{route('categories.index')}}"><span>View all posts by category</span></a>
-         <a class="navbar-brand" href="{{route('boolpress.create')}}"><span>Create new post</span></a>
-       </nav>
-      </div>
-      <div class="container mt-5 p-5">
-        <div class="row flex-column align-items-center justify-content-center mt-5">
+      <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
+        <a class="navbar-brand text-primary" href="{{route('boolpress.index')}}"><h1>Boolpress</h1></a>
+        <a class="navbar-brand" href="{{route('categories.index')}}"><span>View all posts by category</span></a>
+        <a class="navbar-brand" href="{{route('boolpress.create')}}"><span>Create new post</span></a>
+      </nav>
+      <div class="container mt-5 p-5 h-100">
+        <div class="row h-100 w-100 flex-column align-items-center justify-content-center mt-5">
           @if ($errors->any())
             <div class="alert alert-danger">
               <ul>
@@ -37,7 +35,7 @@
           @yield('content')
         </div>
       </div>
-     <footer class="d-flex flex-column align-items-center mt-5 text-primary bg-dark">
+     <footer class="d-flex flex-column align-items-center text-primary bg-dark">
        <h1>Hello from footer</h1>
      </footer>
    </body>

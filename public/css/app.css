@@ -10666,8 +10666,18 @@ a.text-dark:focus {
   }
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .fa-edit {
   font-size: 30px;
   margin-left: 10px;
+}
+
+ul {
+  list-style: none;
 }
 

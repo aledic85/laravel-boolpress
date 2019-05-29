@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <form action="{{route('boolpress.store')}}" method="post">
+  <form class="mt-5" action="{{route('boolpress.store')}}" method="post">
     @csrf
 
     <label>Title:</label><br>

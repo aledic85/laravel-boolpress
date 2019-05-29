@@ -1,9 +1,8 @@
 @extends('layout.layout')
 
 @section('content')
-
-  <h1>Last five posts:</h1>
-  <div class="row align-items-center justify-content-center mt-5">
+  <h1 class="mt-5 p-5 text-center">Last five posts:</h1>
+  <div class="row h-100 align-items-center justify-content-center">
     @foreach($posts as $post)
       <div class="card m-3" style="width: 18rem;">
         <div class="card-body">
