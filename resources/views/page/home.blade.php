@@ -12,6 +12,7 @@
                                               @endforeach</h5>
           <p class="card-text">{{$posts[$i]['content']}}</p>
           <a href="{{route('boolpress.show', $posts[$i]['id'])}}" class="btn btn-primary">Go somewhere</a>
+          <a href="{{route('boolpress.edit', $posts[$i]['id'])}}"><i class="fas fa-edit"></i></a>
         </div>
       </div>
     @endfor

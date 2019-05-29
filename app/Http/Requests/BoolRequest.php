@@ -26,7 +26,7 @@ class BoolRequest extends FormRequest
         return [
 
             'title' => 'required',
-            'categories' => 'required',
+            // 'categories' => 'required',
             'content' => 'required'
         ];
     }

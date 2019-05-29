@@ -41,7 +41,7 @@ class BoolController extends Controller
     {
         $validatedData = $request->validated();
         $post = Post::create($validatedData);
-        $post->categories()->attach($validatedData['categories']);
+        $post->categories()->attach($request['categories']);
         return redirect('boolpress');
     }
 
@@ -65,7 +65,9 @@ class BoolController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = Post::findOrFail($id);
+        $categories = Category::all();
+        return view('page.post-edit', compact('post', 'categories'));
     }
 
     /**
@@ -75,9 +77,12 @@ class BoolController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BoolRequest $request, $id)
     {
-        //
+        $validatedData = $request->validated();
+        Post::whereId($id)->update($validatedData);
+        Post::findOrFail($id)->categories()->sync($request['categories']);
+        return redirect('boolpress');
     }
 
     /**
