@@ -25,7 +25,7 @@ class SearchController extends Controller
       $category = Input::get('category');
       $categoryID = Category::select('id')->where('category_name', 'LIKE', $category)->get();
       $content = Input::get('content');
-      $query = Post::->where('author_id', 'LIKE', $authorID);
+      $query = Post::where('author_id', '=', $authorID['0']['id']);
                             // ->orWhere('id', 'LIKE', $categoryID)
       if ($title != null) {
         $query->orWhere('title', 'LIKE','%'.$title.'%');
