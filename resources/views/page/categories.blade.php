@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  <div class="h-100 mt-5 p5">
+  <div class="wrap mt-5 p5">
     <h4>Select a category:</h4>
     <ul>
       @foreach($categories as $category)
