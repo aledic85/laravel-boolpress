@@ -14,6 +14,7 @@
         <a class="navbar-brand" href="{{route('categories.index')}}"><span>View all posts by category</span></a>
         <a class="navbar-brand" href="{{route('authors.index')}}"><span>View all posts by author</span></a>
         <a class="navbar-brand" href="{{route('boolpress.create')}}"><span>Create new post</span></a>
+        <a class="navbar-brand" href="{{route('form-search')}}"><span>Search post</span></a>
       </nav>
       <div class="container mt-5 p-5 h-100">
         <div class="row h-100 w-100 flex-column align-items-center justify-content-center mt-5">

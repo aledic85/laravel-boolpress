@@ -1,9 +1,12 @@
 @extends('layout.layout')
 
+@section('title')
+  Results
+@endsection
+
 @section('content')
-  <h1>Author: {{$author->name}} {{$author->lastname}}</h1>
   <div class="row wrap align-items-center justify-content-center mt-5">
-    @foreach($author->posts as $post)
+    @foreach($posts as $post)
       <div class="card m-3" style="width: 18rem;">
         <div class="card-body">
           <h5 class="card-title">Title: {{$post->title}}</h5>

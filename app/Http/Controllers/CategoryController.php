@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Post;
 use App\Category;
 
-class CatController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.

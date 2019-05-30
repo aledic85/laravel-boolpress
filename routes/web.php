@@ -11,8 +11,12 @@
 |
 */
 
-Route::resource('boolpress', 'BoolController');
+Route::resource('boolpress', 'PostController');
 
-Route::resource('categories', 'CatController');
+Route::resource('categories', 'CategoryController');
 
-Route::resource('authors', 'AutController');
+Route::resource('authors', 'AuthorController');
+
+Route::get('form', 'SearchController@getAllCategoriesAndAuthors')->name('form-search');
+
+Route::get('search', 'SearchController@search')->name('search-post');
