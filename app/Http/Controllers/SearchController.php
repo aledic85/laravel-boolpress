@@ -25,12 +25,20 @@ class SearchController extends Controller
       $category = Input::get('category');
       $categoryID = Category::select('id')->where('category_name', 'LIKE', $category)->get();
       $content = Input::get('content');
-      $query = Post::where('author_id', '=', $authorID['0']['id']);
-                            // ->orWhere('id', 'LIKE', $categoryID)
+      $query = Post::query();
+
+      if($category) {
+
+        $query = Category::findOrFail($categoryID['0']['id'])->posts();
+      }
       if ($title != null) {
-        $query->orWhere('title', 'LIKE','%'.$title.'%');
-      }elseif ($content != null) {
-        $query->orWhere('content', 'LIKE', '%'.$content.'%');
+        $query = $query->where('title', 'LIKE','%'.$title.'%');
+      }
+      if ($content != null) {
+        $query = $query->where('content', 'LIKE', '%'.$content.'%');
+      }
+      if ($author) {
+        $query = $query->where('author_id', '=', $authorID['0']['id']);
       }
 
       $posts = $query->get();
