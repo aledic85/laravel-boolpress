@@ -26,3 +26,5 @@ Auth::routes();
 Route::get('/create-new-post', 'HomeController@create')->name('create-new-post');
 
 Route::post('/post-store', 'HomeController@store')->name('post-store');
+
+Route::get('logout', 'LoginController@logout')->name('logout');
