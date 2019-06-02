@@ -8,6 +8,10 @@
 
     <label>Title:</label><br>
     <input type="text" name="title" value="{{$post->title}}"><br><br>
+    <label>Author Name:</label><br>
+    <input type="text" name="name" value="{{$post->author->name}}"><br><br>
+    <label>Author Lastname:</label><br>
+    <input type="text" name="lastname" value="{{$post->author->lastname}}"><br><br>
     <label>Category:</label><br>
       @foreach($categories as $category)
         <input type="checkbox" name="categories[]" value="{{$category->id}}"

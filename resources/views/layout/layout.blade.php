@@ -61,8 +61,13 @@
           @yield('content')
         </div>
       </div>
-     <footer class="d-flex flex-column align-items-center text-primary bg-dark">
-       <h1>Hello from footer</h1>
+     <footer class="d-flex flex-column align-items-center justify-content-center text-primary bg-dark">
+       <span>created by aledic85</span>
+       <div class="contacts w-50 d-flex align-items-center justify-content-around">
+         <a href="https://www.facebook.com/alessio.dicuollo" target="_blank"><i class="fab fa-facebook-f"></i></a>
+         <a href="https://www.linkedin.com/in/alessio-di-cuollo-fullstack-developer/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+         <a href="https://github.com/aledic85" target="_blank"><i class="fab fa-github"></i></a>
+       </div>
      </footer>
    </body>
  </html>

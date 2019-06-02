@@ -73,6 +73,9 @@ class PostController extends Controller
         $validatedData = $request->validated();
         Post::whereId($id)->update($validatedData);
         Post::findOrFail($id)->categories()->sync($request['categories']);
+        $authorId = Post::select('author_id')->where('id', $id)->get();
+        $author = Author::find($authorId)->first();
+        $author->update(['name' => $request['name'], 'lastname' => $request['lastname']]);
         return redirect('boolpress');
     }
 
