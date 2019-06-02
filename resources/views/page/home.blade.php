@@ -1,5 +1,6 @@
 @extends('layout.layout')
 
+
 @section('content')
   <h1 class="mt-5 p-5 text-center">Last five posts:</h1>
   <div class="row h-100 align-items-center justify-content-center">

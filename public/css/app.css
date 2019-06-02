@@ -10677,7 +10677,8 @@ a.text-dark:focus {
   margin-left: 10px;
 }
 
-ul {
+ul,
+li {
   list-style: none;
 }
 

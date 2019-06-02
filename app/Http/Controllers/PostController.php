@@ -27,11 +27,7 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        $categories = Category::all();
-        return view('page.new-post', compact('categories'));
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -39,15 +35,6 @@ class PostController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CreateRequest $request)
-    {
-        $validatedData = $request->validated();
-        $post = Post::make($validatedData);
-        $author = Author::create($validatedData);
-        $post->author()->associate($author)->save();
-        $post->categories()->attach($request['categories']);
-        return redirect('boolpress');
-    }
 
     /**
      * Display the specified resource.

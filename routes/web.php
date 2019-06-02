@@ -20,3 +20,9 @@ Route::resource('authors', 'AuthorController');
 Route::get('form', 'SearchController@getAllCategoriesAndAuthors')->name('form-search');
 
 Route::get('search', 'SearchController@search')->name('search-post');
+
+Auth::routes();
+
+Route::get('/create-new-post', 'HomeController@create')->name('create-new-post');
+
+Route::post('/post-store', 'HomeController@store')->name('post-store');

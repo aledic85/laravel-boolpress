@@ -2,15 +2,15 @@
 
 @section('content')
 
-  <form class="mt-5" action="{{route('boolpress.store')}}" method="post">
+  <form class="mt-5" action="{{route('post-store')}}" method="post">
     @csrf
 
     <label>Title:</label><br>
     <input type="text" name="title" value=""><br>
     <label>Author Name:</label><br>
-    <input type="text" name="name" value=""><br>
+    <input type="text" name="name" value="{{ Auth::user()->name }}"><br>
     <label>Author Lastname:</label><br>
-    <input type="text" name="lastname" value=""><br>
+    <input type="text" name="lastname" value="{{ Auth::user()->lastname }}"><br>
     <label>Category:</label><br>
       @foreach($categories as $category)
         <input type="checkbox" name="categories[]" value="{{$category->id}}"> {{$category->category_name}}<br>
