@@ -2,7 +2,7 @@
 
 @section('content')
   <h1>Author: {{$author->name}} {{$author->lastname}}</h1>
-  <div class="row wrap align-items-center justify-content-center mt-5">
+  <div class="row align-items-center justify-content-center mt-5">
     @foreach($author->posts as $post)
       <div class="card m-3" style="width: 18rem;">
         <div class="card-body">

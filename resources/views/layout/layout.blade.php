@@ -10,11 +10,23 @@
    </head>
    <body>
       <nav class="navbar navbar-dark bg-dark navbar-expand-lg fixed-top">
-        <a class="navbar-brand text-primary" href="{{route('boolpress.index')}}"><h1>Boolpress</h1></a>
-        <a class="navbar-brand" href="{{route('categories.index')}}"><span>View all posts by category</span></a>
-        <a class="navbar-brand" href="{{route('authors.index')}}"><span>View all posts by author</span></a>
-        <a class="navbar-brand" href="{{route('create-new-post')}}"><span>Create new post</span></a>
-        <a class="navbar-brand" href="{{route('form-search')}}"><span>Search post</span></a>
+        <div class="d-none d-lg-flex flex-wrap align-items-center justify-content-between">
+          <a class="navbar-brand text-primary" href="{{route('boolpress.index')}}"><h1>Boolpress</h1></a>
+          <a class="navbar-brand" href="{{route('categories.index')}}"><span>View all posts by category</span></a>
+          <a class="navbar-brand" href="{{route('authors.index')}}"><span>View all posts by author</span></a>
+          <a class="navbar-brand" href="{{route('create-new-post')}}"><span>Create new post</span></a>
+          <a class="navbar-brand" href="{{route('form-search')}}"><span>Search post</span></a>
+        </div>
+        <div class="hamb-menu d-block d-lg-none">
+          <i class="fas fa-bars text-primary"></i>
+          <div class="hamb-items bg-dark">
+            <a class="navbar-brand text-primary" href="{{route('boolpress.index')}}"><span>Home</h1></span>
+            <a class="navbar-brand" href="{{route('categories.index')}}"><span>View all posts by category</span></a>
+            <a class="navbar-brand" href="{{route('authors.index')}}"><span>View all posts by author</span></a>
+            <a class="navbar-brand" href="{{route('create-new-post')}}"><span>Create new post</span></a>
+            <a class="navbar-brand" href="{{route('form-search')}}"><span>Search post</span></a>
+          </div>
+        </div>
         @guest
               <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
             @if (Route::has('register'))

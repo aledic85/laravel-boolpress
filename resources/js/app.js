@@ -30,3 +30,24 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+function dropdownItems() {
+
+  var me = $(this);
+
+  me.siblings('.hamb-items').slideToggle();
+}
+
+function init() {
+
+  var hambMenu = $('.fa-bars');
+
+  hambMenu.click(dropdownItems);
+
+  $(window).resize(function(){
+
+    $(".hamb-items").css("display", "none");
+  });
+}
+
+$(document).ready(init);
