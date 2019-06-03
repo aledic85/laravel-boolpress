@@ -16,7 +16,7 @@
         <input type="checkbox" name="categories[]" value="{{$category->id}}"> {{$category->category_name}}<br>
       @endforeach
     <label>Content:</label><br>
-    <textarea rows="4" cols="50" class="form-control" name="content"></textarea><br><br>
+    <textarea id="summernote" rows="4" cols="50" class="form-control" name="content"></textarea><br><br>
     <button type="submit" name="button">Create!</button>
   </form>
 @stop

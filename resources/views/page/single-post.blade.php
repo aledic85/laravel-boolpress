@@ -13,6 +13,6 @@
       @foreach($post->categories as $category)
         <h6><a href="{{route('categories.show', $category->id)}}">{{$category->category_name}}</a></h6>
       @endforeach
-      <p>{{$post->content}}</p>
+      <p>{!! $post->content !!}</p>
     </div>
   @stop

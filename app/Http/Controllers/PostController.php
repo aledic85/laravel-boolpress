@@ -71,8 +71,9 @@ class PostController extends Controller
     public function update(EditRequest $request, $id)
     {
         $validatedData = $request->validated();
-        Post::whereId($id)->update($validatedData);
-        Post::findOrFail($id)->categories()->sync($request['categories']);
+        $post = Post::findOrFail($id);
+        $post->update($validatedData);
+        $post->categories()->sync($request['categories']);
         $authorId = Post::select('author_id')->where('id', $id)->get();
         $author = Author::find($authorId)->first();
         $author->update(['name' => $request['name'], 'lastname' => $request['lastname']]);
