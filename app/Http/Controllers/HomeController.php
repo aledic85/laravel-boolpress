@@ -41,8 +41,19 @@ class HomeController extends Controller
      {
          $validatedData = $request->validated();
          $post = Post::make($validatedData);
-         $author = Author::create($validatedData);
-         $post->author()->associate($author)->save();
+
+         $findAuthor = Author::where('name', 'LIKE', $validatedData['name'])->where('lastname', 'LIKE', $validatedData['lastname'])->get();
+
+         if ($findAuthor->isEmpty()) {
+
+           $author = Author::create($validatedData);
+           $post->author()->associate($author)->save();
+         }
+
+         else {
+           $post->author()->associate($findAuthor[0])->save();
+         }
+
          $post->categories()->attach($request['categories']);
          $user = Auth::user();
          $user->notify(new NewPostCreated);
