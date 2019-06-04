@@ -28,3 +28,7 @@ Route::get('/create-new-post', 'HomeController@create')->name('create-new-post')
 Route::post('/post-store', 'HomeController@store')->name('post-store');
 
 Route::get('logout', 'LoginController@logout')->name('logout');
+
+Route::get('contact-us', 'HomeController@contactUs')->name('contact-us');
+
+Route::post('contact-us', 'HomeController@sendMail')->name('send-mail');

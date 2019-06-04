@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateRequest;
 use App\Http\Requests\EditRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\MailSender;
+use App\Notifications\NewPostCreated;
+use Illuminate\Notifications\Notifiable;
 use App\Post;
 use App\Category;
 use App\Author;
@@ -39,6 +44,26 @@ class HomeController extends Controller
          $author = Author::create($validatedData);
          $post->author()->associate($author)->save();
          $post->categories()->attach($request['categories']);
+         $user = Auth::user();
+         $user->notify(new NewPostCreated);
          return redirect('boolpress');
+     }
+
+     public function contactUs()
+     {
+       return view('page.contact-us');
+     }
+
+     public function sendMail(Request $request)
+     {
+       $name = $request->name;
+       $lastname = $request->lastname;
+       $email = $request->email;
+       $title = $request->title;
+       $content = $request->description;
+
+
+       Mail::to('admin@boolpress.it')->queue(new MailSender($name, $lastname, $email, $title, $content));
+       return redirect('boolpress');
      }
 }
