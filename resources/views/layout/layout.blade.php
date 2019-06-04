@@ -27,6 +27,7 @@
             <a class="navbar-brand" href="{{route('authors.index')}}"><span>View all posts by author</span></a>
             <a class="navbar-brand" href="{{route('create-new-post')}}"><span>Create new post</span></a>
             <a class="navbar-brand" href="{{route('form-search')}}"><span>Search post</span></a>
+            <a class="navbar-brand" href="{{route('contact-us')}}"><span>Contact us</span></a>
           </div>
         </div>
         @guest
