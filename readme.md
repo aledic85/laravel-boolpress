@@ -1,8 +1,10 @@
 
-Boolpress
+# Boolpress
+
 Boolpress è un progetto creato in Laravel che simula tutte le funzionalità di un blog vero e proprio.
 
-Caratteristiche
+## Caratteristiche
+
 - All'interno del progetto è possibile registrarsi ed effettuare login e logout; 
 - L'utente loggato ha la possibilità di gestire i post(creazione nuovo post, modifica);
 - L'utente loggato può contattare l'admin tramite un form;
@@ -11,8 +13,10 @@ Caratteristiche
 - Qualisasi utente può effettuare una ricerca dei post per parole chiave, autore e categoria;
 - Il sistema notifica via mail l'avvenuta creazione di un nuovo post all'utente responsabile.
 
-Tecnologie usate
+## Tecnologie usate
+
 HTML, SCSS, Bootstrap, Laravel(Blade, Eloquent, Webpack), MySql, phpMyAdmin.
 
-Visualizzazione progetto
+## Visualizzazione progetto
+
 È stato effettuato un deploy del progetto su DigitalOcean: http://188.166.77.115/boolpress
