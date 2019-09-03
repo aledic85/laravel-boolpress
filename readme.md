@@ -16,7 +16,3 @@ Boolpress è un progetto creato in Laravel che simula tutte le funzionalità di 
 ## Tecnologie usate
 
 HTML, SCSS, Bootstrap, Laravel(Blade, Eloquent, Webpack), MySql, phpMyAdmin.
-
-## Visualizzazione progetto
-
-È stato effettuato un deploy del progetto su DigitalOcean: http://188.166.77.115/boolpress
